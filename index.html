@@ -8,76 +8,68 @@
     <title>Document</title>
   </head>
   <body>
-    <!--Image upload half of the screen-->
-    <div class="split left">
-      <div class="leftCentered">
+    <div class="container">
+      <!--Image upload half of the screen-->
+      <div class="left-panel">
         <h1>Upload Your Image Here</h1>
-        <div class="uploader">
           <input
             type="file"
             id="image_upload"
             accept="image/jpeg, image/png, image/jpg"
           />
-
           <img id="image" />
-        </div>
       </div>
-    </div>
-
-    <!--MetaData half of the screen-->
-    <div class="split right">
-      <div class="rightCentered">
+      <!--MetaData half of the screen-->
+      <div class="right-panel">
         <h1>MetaData</h1>
-        <p></p>
-      </div>
-      <div class="metadata">
         <!--<form action="aws-api" method="post"> -->
-        <form id="formElem">
-          <input type="file" id="json-input" accept=".json" />
-          <!--      <button id="import">Import Fields</button> -->
-          <br />
-          <label for="photoId">Photo ID:</label>
-          <input type="text" id="photoId" class="form" name="Photo ID" />
-          <br />
-          <label for="imageName">Image Name:</label>
-          <input type="text" id="imageName" class="form" name="Image Name" />
-          <br />
-          <label for="individual">Individual:</label>
-          <input type="text" id="individual" class="form" name="Individual" />
-          <br />
-          <label for="officeLocation">Office Location:</label>
-          <input type="text" id="officeLocation" class="form" name="Office Location"/>
-          <br />
-          <label for="floorNumber">Floor Number:</label>
-          <input type="text" id="floorNumber" class="form" name="Floor Number"/>
-          <br />
-          <label for="officeNumber">Office Number:</label>
-          <input type="text" id="officeNumber" class="form" name="Office Number"/>
-          <br />
-          <label for="phoneNumber">Phone Number:</label>
-          <input type="text" id="phoneNumber" class="form" name="Phone Number"/>
-          <br />
-          <label for="email">Email:</label>
-          <input type="text" id="email" class="form" name="Email"/>
-          <br />
-          <label for="department">Department:</label>
-          <input type="text" id="department" class="form" name="Department"/>
-          <br />
-          <label for="keyWord">Key Word:</label>
-          <input type="text" id="keyWord" class="form" name="Key Word"/>
-          <br />
-          <label for="description">Description:</label>
-          <textarea name="Description" id="description" class="form"></textarea>
-          <br />
-
-          <button type="submit">Submit</button>
-          <br />
-          <br />
-          <br />
-          <button type="button" onclick="save()">Save</button>
-        </form>
+          <form id="formElem">
+            <input type="file" id="json-input" accept=".json" />
+            <!--      <button id="import">Import Fields</button> -->
+            <br />
+            <label for="photoId">Photo ID:</label>
+            <input type="text" id="photoId" class="form" name="Photo ID" />
+            <br />
+            <label for="imageName">Image Name:</label>
+            <input type="text" id="imageName" class="form" name="Image Name" />
+            <br />
+            <label for="individual">Individual:</label>
+            <input type="text" id="individual" class="form" name="Individual" />
+            <br />
+            <label for="officeLocation">Office Location:</label>
+            <input type="text" id="officeLocation" class="form" name="Office Location"/>
+            <br />
+            <label for="floorNumber">Floor Number:</label>
+            <input type="text" id="floorNumber" class="form" name="Floor Number"/>
+            <br />
+            <label for="officeNumber">Office Number:</label>
+            <input type="text" id="officeNumber" class="form" name="Office Number"/>
+            <br />
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" class="form" name="Phone Number"/>
+            <br />
+            <label for="email">Email:</label>
+            <input type="text" id="email" class="form" name="Email"/>
+            <br />
+            <label for="department">Department:</label>
+            <input type="text" id="department" class="form" name="Department"/>
+            <br />
+            <label for="keyWord">Key Word:</label>
+            <input type="text" id="keyWord" class="form" name="Key Word"/>
+            <br />
+            <label for="description">Description:</label>
+            <textarea name="Description" id="description" class="form"></textarea>
+            <br />
+  
+            <button type="submit">Submit</button>
+            <br />
+            <br />
+            <br />
+            <button type="button" onclick="save()">Save</button>
+          </form>
       </div>
     </div>
+
     <script src="imageUpload.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="jsonUpload.js"></script>

@@ -34,3 +34,10 @@ fileInput.addEventListener('change', () => {
   // Read the file as text
   reader.readAsText(file);
 });
+
+// Dynamically alters the Description form element's text box dependent on input amount
+const textarea = document.querySelector('#description');
+textarea.addEventListener('input', () => {
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+});
