@@ -1,16 +1,23 @@
-//The code to upload an imagefrom the local machine into the web app
-const image_upload = document.querySelector("#image_upload");
+//The code to upload an image from the local machine into the web app
 
-//var uploaded_image = "";
+const imageInput = document.querySelector('#image_upload');
+const previewImage = document.querySelector('#image');
 
-image_upload.addEventListener("change", function() {
-    console.log(image_upload.value);
-    const reader = new FileReader()
-    reader.addEventListener("load", () => {
-//        uploaded_image = reader.result;
-//        document.querySelector("#image").style.backgorundImage = `url(${uploaded_image})`;
-        document.querySelector("#image").src = reader.result
-    })
-    
-    reader.readAsDataURL(this.files[0])
+imageInput.addEventListener('change', function() {
+  const file = imageInput.files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener('load', function() {
+    previewImage.src = reader.result;
+  });
+
+  reader.addEventListener('error', function() {
+    alert('Error loading image.');
+  });
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    previewImage.src = '';
+  }
 });
