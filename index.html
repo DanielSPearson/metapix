@@ -1,87 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-main.css" />
     <title>Document</title>
-</head>
-<body>
-<!--Image upload half of the screen-->
-<div class="split left">
-  <div class="leftCentered">
-    <h2>Upload Your Image Here</h2>
-    <div class="uploader">
-      <input type="file" id="image_upload" accept="image/jpeg, image/png, image/jpg"/>
-    
-      <img id="image"/>
+  </head>
+  <body>
+    <!--Image upload half of the screen-->
+    <div class="split left">
+      <div class="leftCentered">
+        <h2>Upload Your Image Here</h2>
+        <div class="uploader">
+          <input
+            type="file"
+            id="image_upload"
+            accept="image/jpeg, image/png, image/jpg"
+          />
+
+          <img id="image" />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!--MetaData half of the screen-->
-<div class="split right">
-  <div class="rightCentered">
-    <h2>MetaData</h2>
-    <p></p>
-    
-  </div>
-  <div class="metadata">
-<!--<form action="aws-api" method="post"> -->
-    <form id="formElem">
-      <input type="file" id="json-file" accept=".json">
-<!--      <button id="import">Import Fields</button> -->
-      <br>
-      <label for="method">Method:</label>
-      <select name="method" id="method" class="form">
-        <option value="none">None</option>
-        <option value="phone">Phone</option>
-        <option value="slr">SLR</option>
-        <option value="aerial">Aerial</option>
-      </select>
-      <br>
-      <label for="photoId">Photo ID:</label>
-        <input type="text" id="photoId" class="form"/>
-        <br>
-      <label for="Name">Name:</label>
-        <input type="text" id="Name" class="form"/>
-        <br>
-      <label for="photographer">Photographer:</label>
-        <input type="text" id="photographer" class="form"/>
-        <br>
-      <label for="individual">Individual:</label>
-        <input type="text" class="form" id="i_new_1"/>
-        <button type="button" onclick="add_i()" id="add-i-line">Add Individual</button>
-        <button type="button" onclick="remove_i()" id="remove-i-line">Remove Individual</button>
-        <div id="i_chq"></div>
-        <input type="hidden" value="1" id="i_total_chq"/>
-        <br>
-      <label for="department">Department:</label>
-        <input type="text" id="department" class="form"/>
-        <br>
-      <label for="keyWord">Key Word:</label>
-        <input type="text" id="keyWord" class="form"/>
-        <br>
-      <label for="description">Description:</label>
-        <input type="text" id="description" class="form"/>
-        <br>
+    <!--MetaData half of the screen-->
+    <div class="split right">
+      <div class="rightCentered">
+        <h2>MetaData</h2>
+        <p></p>
+      </div>
+      <div class="metadata">
+        <!--<form action="aws-api" method="post"> -->
+        <form id="formElem">
+          <input type="file" id="json-input" accept=".json" />
+          <!--      <button id="import">Import Fields</button> -->
+          <br />
+          <label for="photoId">Photo ID:</label>
+          <input type="text" id="photoId" class="form" name="Photo ID" />
+          <br />
+          <label for="imageName">Image Name:</label>
+          <input type="text" id="imageName" class="form" name="Image Name" />
+          <br />
+          <label for="individual">Individual:</label>
+          <input type="text" id="individual" class="form" name="Individual" />
+          <br />
+          <label for="officeLocation">Office Location:</label>
+          <input type="text" id="officeLocation" class="form" name="Office Location"/>
+          <br />
+          <label for="floorNumber">Floor Number:</label>
+          <input type="text" id="floorNumber" class="form" name="Floor Number"/>
+          <br />
+          <label for="officeNumber">Office Number:</label>
+          <input type="text" id="officeNumber" class="form" name="Office Number"/>
+          <br />
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" id="phoneNumber" class="form" name="Phone Number"/>
+          <br />
+          <label for="email">Email:</label>
+          <input type="text" id="email" class="form" name="Email"/>
+          <br />
+          <label for="department">Department:</label>
+          <input type="text" id="department" class="form" name="Department"/>
+          <br />
+          <label for="keyWord">Key Word:</label>
+          <input type="text" id="keyWord" class="form" name="Key Word"/>
+          <br />
+          <label for="description">Description:</label>
+          <textarea name="Description" id="description" class="form"></textarea>
+          <br />
 
-      <button type="submit">Submit</button>
-      <br>
-      <br>
-      <br>
-      <button type="button" onclick="save()">Save</button>
-      
-      
-      
-
-    </form>
-  </div>
-</div>
-<script src="imageUpload.js"></script>
-<script src="extraTextBoxes.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="save.js"></script>
-</body>
+          <button type="submit">Submit</button>
+          <br />
+          <br />
+          <br />
+          <button type="button" onclick="save()">Save</button>
+        </form>
+      </div>
+    </div>
+    <script src="imageUpload.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="jsonUpload.js"></script>
+    <script src="save.js"></script>
+  </body>
 </html>
