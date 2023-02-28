@@ -12,20 +12,15 @@
       <!--Image upload half of the screen-->
       <div class="left-panel">
         <h1>Upload Your Image Here</h1>
-          <input
-            type="file"
-            id="image_upload"
-            accept="image/jpeg, image/png, image/jpg"
-          />
-          <img id="image" />
+          <input type="file" id="image_upload" accept="image/jpeg, image/png, image/jpg"/>
+          <img id="image"/>
       </div>
       <!--MetaData half of the screen-->
       <div class="right-panel">
         <h1>MetaData</h1>
         <!--<form action="aws-api" method="post"> -->
-          <form id="formElem">
+          <form id="form">
             <input type="file" id="json-input" accept=".json" />
-            <!--      <button id="import">Import Fields</button> -->
             <br />
             <label for="photoId">Photo ID:</label>
             <input type="text" id="photoId" class="form" name="Photo ID" />
@@ -54,18 +49,21 @@
             <label for="department">Department:</label>
             <input type="text" id="department" class="form" name="Department"/>
             <br />
-            <label for="keyWord">Key Word:</label>
-            <input type="text" id="keyWord" class="form" name="Key Word"/>
+            <label for="manager">Manager:</label>
+            <input type="text" id="manager" class="form" name="Manager"/>
+            <br />
+            <label for="keyWords">Key Words:</label>
+            <input type="text" id="keyWords" class="form" name="Key Words"/>
             <br />
             <label for="description">Description:</label>
             <textarea name="Description" id="description" class="form"></textarea>
             <br />
   
-            <button type="submit">Submit</button>
+            <button type="button" id="cloudSave">Cloud Save</button>
             <br />
             <br />
-            <br />
-            <button type="button" onclick="save()">Save</button>
+            <!--<button type="button" onclick="save()">Save</button>-->
+            <button type="button" id="save">Save</button>
           </form>
       </div>
     </div>
@@ -73,6 +71,8 @@
     <script src="imageUpload.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="jsonUpload.js"></script>
+    <script src="node_modules/jszip/dist/jszip.min.js"></script>
     <script src="save.js"></script>
+    <script src="metadataAPI.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ const formInputs = document.querySelectorAll('input[type=text], textarea');
 
 // Listen for a file to be selected
 fileInput.addEventListener('change', () => {
-  const file = fileInput.files[0];
+  const jsonFile = fileInput.files[0];
 
   // Create a new FileReader object
   const reader = new FileReader();
@@ -32,7 +32,7 @@ fileInput.addEventListener('change', () => {
   };
 
   // Read the file as text
-  reader.readAsText(file);
+  reader.readAsText(jsonFile);
 });
 
 // Dynamically alters the Description form element's text box dependent on input amount

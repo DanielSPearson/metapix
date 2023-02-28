@@ -1,10 +1,10 @@
 //The code to upload an image from the local machine into the web app
 
-const imageInput = document.querySelector('#image_upload');
+const imageUpload = document.querySelector('#image_upload');
 const previewImage = document.querySelector('#image');
 
-imageInput.addEventListener('change', function() {
-  const file = imageInput.files[0];
+imageUpload.addEventListener('change', function() {
+  const imageFile = imageUpload.files[0];
   const reader = new FileReader();
 
   reader.addEventListener('load', function() {
@@ -15,8 +15,8 @@ imageInput.addEventListener('change', function() {
     alert('Error loading image.');
   });
 
-  if (file) {
-    reader.readAsDataURL(file);
+  if (imageFile) {
+    reader.readAsDataURL(imageFile);
   } else {
     previewImage.src = '';
   }
