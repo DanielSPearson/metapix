@@ -79,7 +79,10 @@ var callAPI = (
     // make API call with parameters and use promises to get response
     fetch("https://0k2cn4ax5c.execute-api.eu-west-2.amazonaws.com/prod", metadataRequestOptions)
         .then(response => response.text())
-        .then(result => alert(JSON.parse(result).body))
+        .then(result => {
+            alert(JSON.parse(result).body);
+            setTimeout(() => location.reload(), 1000);
+        })
         .catch(error => console.log('error', error));
     fetch("https://6qalvwtee4.execute-api.eu-west-2.amazonaws.com/prod",imageRequestOptions)
         .then((response) => response.text())
