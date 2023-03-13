@@ -12,67 +12,93 @@
       <!--Image upload half of the screen-->
       <div class="left-panel">
         <h1>Upload Your Image Here</h1>
-          <input type="file" id="image_upload" accept="image/jpeg, image/png, image/jpg"/>
-          <img id="image"/>
+        <input
+          type="file"
+          id="image_upload"
+          accept="image/jpeg, image/png, image/jpg"
+        />
+        <img id="image" />
       </div>
       <!--MetaData half of the screen-->
       <div class="right-panel">
         <h1>MetaData</h1>
         <!--<form action="aws-api" method="post"> -->
-          <form id="form">
-            <input type="file" id="json-input" accept=".json" />
-            <br />
-            <label for="photoId">Photo ID:</label>
-            <input type="text" id="photoId" class="form" name="Photo ID" />
-            <br />
-            <label for="imageName">Image Name:</label>
-            <input type="text" id="imageName" class="form" name="Image Name" />
-            <br />
-            <label for="individual">Individual:</label>
-            <input type="text" id="individual" class="form" name="Individual" />
-            <br />
-            <label for="officeLocation">Office Location:</label>
-            <input type="text" id="officeLocation" class="form" name="Office Location"/>
-            <br />
-            <label for="floorNumber">Floor Number:</label>
-            <input type="text" id="floorNumber" class="form" name="Floor Number"/>
-            <br />
-            <label for="officeNumber">Office Number:</label>
-            <input type="text" id="officeNumber" class="form" name="Office Number"/>
-            <br />
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="text" id="phoneNumber" class="form" name="Phone Number"/>
-            <br />
-            <label for="email">Email:</label>
-            <input type="text" id="email" class="form" name="Email"/>
-            <br />
-            <label for="department">Department:</label>
-            <input type="text" id="department" class="form" name="Department"/>
-            <br />
-            <label for="manager">Manager:</label>
-            <input type="text" id="manager" class="form" name="Manager"/>
-            <br />
-            <label for="keyWords">Key Words:</label>
-            <input type="text" id="keyWords" class="form" name="Key Words"/>
-            <br />
-            <label for="description">Description:</label>
-            <textarea name="Description" id="description" class="form"></textarea>
-            <br />
-  
-            <button type="button" id="cloudSave">Cloud Save</button>
-            <br />
-            <br />
-            <!--<button type="button" onclick="save()">Save</button>-->
-            <button type="button" id="save">Save</button>
-          </form>
+        <form id="form">
+          <input type="file" id="json-input" accept=".json" />
+          <br />
+          <label for="photoId">Photo ID:</label>
+          <input type="text" id="photoId" class="form" name="Photo ID" />
+          <br />
+          <label for="imageName">Image Name:</label>
+          <input type="text" id="imageName" class="form" name="Image Name" />
+          <br />
+          <label for="individual">Individual:</label>
+          <input type="text" id="individual" class="form" name="Individual" />
+          <br />
+          <label for="officeLocation">Office Location:</label>
+          <input
+            type="text"
+            id="officeLocation"
+            class="form"
+            name="Office Location"
+          />
+          <br />
+          <label for="floorNumber">Floor Number:</label>
+          <input
+            type="text"
+            id="floorNumber"
+            class="form"
+            name="Floor Number"
+          />
+          <br />
+          <label for="officeNumber">Office Number:</label>
+          <input
+            type="text"
+            id="officeNumber"
+            class="form"
+            name="Office Number"
+          />
+          <br />
+          <label for="phoneNumber">Phone Number:</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            class="form"
+            name="Phone Number"
+          />
+          <br />
+          <label for="email">Email:</label>
+          <input type="text" id="email" class="form" name="Email" />
+          <br />
+          <label for="department">Department:</label>
+          <input type="text" id="department" class="form" name="Department" />
+          <br />
+          <label for="manager">Manager:</label>
+          <input type="text" id="manager" class="form" name="Manager" />
+          <br />
+          <label for="keyWords">Key Words:</label>
+          <input type="text" id="keyWords" class="form" name="Key Words" />
+          <br />
+          <label for="description">Description:</label>
+          <textarea name="Description" id="description" class="form"></textarea>
+          <br />
+
+          <button type="button" id="cloudSave">Cloud Save</button>
+          <br />
+          <br />
+          <!--<button type="button" onclick="save()">Save</button>-->
+          <button type="button" id="save">Save</button>
+          <button type="button" id="check">Check</button>
+        </form>
       </div>
     </div>
 
-    <script src="imageUpload.js"></script>
+    <script type="module" src="imageUpload.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="jsonUpload.js"></script>
     <script src="node_modules/jszip/dist/jszip.min.js"></script>
     <script src="save.js"></script>
-    <script src="metadataAPI.js"></script>
+    <script type="module" src="metadataAPI.js"></script>
+  <!--  <script type="module" src="imageAPI.js"></script>-->
   </body>
 </html>

@@ -1,3 +1,4 @@
+import { base64Image, fileType } from "./imageUpload.js";
 var button = document.getElementById("cloudSave");
 button.addEventListener("click", function() {
     callAPI(photoId.value,
@@ -11,7 +12,9 @@ button.addEventListener("click", function() {
         department.value,
         manager.value,
         keyWords.value,
-        description.value);
+        description.value,
+        base64Image,
+        fileType);
 });
 // define the callAPI function that takes the metadata as parameters
 var callAPI = (
@@ -33,7 +36,7 @@ var callAPI = (
     // add content type header to object
     myHeaders.append("Content-Type", "application/json");
     // using built in JSON utility package turn object to string and store in a variable
-    var raw = JSON.stringify({
+    var metadata = JSON.stringify({
         "photoId":photoId,
         "imageName":imageName,
         "individual":individual,
@@ -47,16 +50,39 @@ var callAPI = (
         "keyWords":keyWords,
         "description":description,
     });
+
+    var imageData = JSON.stringify({
+        "image":base64Image,
+        "photoId":photoId,
+        "fileType":fileType
+    });
     // create a JSON object with parameters for API call and store in a variable
-    var requestOptions = {
+    var metadataRequestOptions = {
         method: 'POST',
         headers: myHeaders,
-        body: raw,
+        body: metadata,
         redirect: 'follow'
     };
+
+    var imageRequestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: imageData,
+        redirect: 'follow'
+    };
+
+    var check = document.getElementById("check");
+    check.addEventListener("click", function () {
+        console.log(imageData);
+    });
+
     // make API call with parameters and use promises to get response
-    fetch("https://0k2cn4ax5c.execute-api.eu-west-2.amazonaws.com/prod", requestOptions)
-    .then(response => response.text())
-    .then(result => alert(JSON.parse(result).body))
-    .catch(error => console.log('error', error));
+    fetch("https://0k2cn4ax5c.execute-api.eu-west-2.amazonaws.com/prod", metadataRequestOptions)
+        .then(response => response.text())
+        .then(result => alert(JSON.parse(result).body))
+        .catch(error => console.log('error', error));
+    fetch("https://6qalvwtee4.execute-api.eu-west-2.amazonaws.com/prod",imageRequestOptions)
+        .then((response) => response.text())
+        .then((result) => alert(JSON.parse(result).body))
+        .catch((error) => console.log("error", error));
 }
