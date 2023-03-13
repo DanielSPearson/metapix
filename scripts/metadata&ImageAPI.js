@@ -1,5 +1,5 @@
 import { base64Image, fileType } from "./imageUpload.js";
-var button = document.getElementById("cloudSave");
+var button = document.getElementById("save");
 button.addEventListener("click", function() {
     callAPI(photoId.value,
         imageName.value,

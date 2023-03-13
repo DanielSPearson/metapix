@@ -2,10 +2,10 @@
 
 const imageUpload = document.querySelector('#image_upload');
 const previewImage = document.querySelector('#image');
-export let base64Image, fileType;
+export let base64Image, fileType, imageFile;
 
 imageUpload.addEventListener('change', function() {
-  const imageFile = imageUpload.files[0];
+  imageFile = imageUpload.files[0];
   const reader = new FileReader();
 
   reader.addEventListener('load', function() {
@@ -24,4 +24,6 @@ imageUpload.addEventListener('change', function() {
   }
   fileType = imageFile.type;
   console.log(fileType)
+  console.log(imageFile);
+  console.log(imageFile.name.split('.').pop());
 });
