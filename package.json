@@ -15,6 +15,6 @@
   },
   "scripts": {
     "test": "jest --debug",
-    "build": "mkdir -p dist/scripts && cp index.html css/*.css dist && cp -R scripts/* dist/scripts && cp node_modules/jszip/dist/jszip.min.js node_modules/file-saver/dist/FileSaver.min.js dist"
+    "build": "mkdir -p dist/scripts && cp index.html dist && cp css/style-main.css dist && cp -R scripts dist && cp node_modules/jszip/dist/jszip.min.js node_modules/file-saver/dist/FileSaver.min.js dist"
   }
 }
