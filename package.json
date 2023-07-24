@@ -14,6 +14,8 @@
     "jest-environment-jsdom": "^29.5.0"
   },
   "scripts": {
-    "test": "jest --debug"
+    "test": "jest --debug",
+    "build": "mkdir -p build && cp index.html favicon.png appspec.yml style-main.css package.json package-lock.json build && cp -r scripts build"
   }
 }
+
