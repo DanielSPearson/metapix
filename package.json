@@ -1,4 +1,12 @@
 {
+  "name": "EPA-web-app",
+  "version": "1.0.0",
+  "description": "EPA final project",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://eu-west-2.console.aws.amazon.com/codesuite/codecommit/repositories/metapix-web-app/browse?region=eu-west-2"
+  },
   "dependencies": {
     "file-saver": "^2.0.5",
     "jszip": "^3.6.0"
@@ -15,7 +23,7 @@
   },
   "scripts": {
     "test": "jest --debug",
-    "build": "mkdir -p build && cp index.html favicon.png appspec.yml style-main.css package.json package-lock.json build && cp -r scripts build"
+    "build": "mkdir -p build && cp index.html metapix_favicon.png appspec.yml style-main.css package.json package-lock.json build && cp -r scripts build"
   }
 }
 
