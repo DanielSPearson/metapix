@@ -7,4 +7,4 @@ hooks:
   ApplicationStart:
     - runas: root
       ignoreErrors: false
-      command: systemctl start httpd
+      command: systemctl restart httpd
