@@ -71,11 +71,6 @@ var callAPI = (
         redirect: 'follow'
     };
 
-    var check = document.getElementById("check");
-    check.addEventListener("click", function () {
-        console.log(imageData);
-    });
-
     // make API call with parameters and use promises to get response
     fetch("https://0k2cn4ax5c.execute-api.eu-west-2.amazonaws.com/prod", metadataRequestOptions)
         .then(response => response.text())

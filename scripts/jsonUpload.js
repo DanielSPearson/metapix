@@ -1,6 +1,6 @@
 // Get the file input and form input elements
 const fileInput = document.getElementById('json-input');
-const formInputs = document.querySelectorAll('input[type=text], textarea');
+export const formInputs = document.querySelectorAll('input[type=text], textarea');
 
 // Listen for a file to be selected
 fileInput.addEventListener('change', () => {
