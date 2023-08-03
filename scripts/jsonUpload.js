@@ -1,12 +1,15 @@
 // Get the file input and form input elements
 const fileInput = document.getElementById('json-input');
+
+// Select all form input elements of type "text" and "textarea"
 export const formInputs = document.querySelectorAll('input[type=text], textarea');
 
 // Listen for a file to be selected
 fileInput.addEventListener('change', () => {
+  // Get the selected JSON file from the file input
   const jsonFile = fileInput.files[0];
 
-  // Create a new FileReader object
+  // Create a new FileReader object to read the JSON file
   const reader = new FileReader();
 
   // Handle the file once it's loaded
@@ -15,7 +18,7 @@ fileInput.addEventListener('change', () => {
       // Parse the JSON data from the file
       const data = JSON.parse(event.target.result);
 
-      // Populate the form fields with the data
+      // Populate the form fields with the data from the JSON file
       formInputs.forEach((input) => {
         if (data[input.name]) {
           input.value = data[input.name];
@@ -37,7 +40,10 @@ fileInput.addEventListener('change', () => {
 
 // Dynamically alters the Description form element's text box dependent on input amount
 const textarea = document.querySelector('#description');
+
+// Listen for input events on the Description text area
 textarea.addEventListener('input', () => {
+  // Automatically adjust the height of the text area to fit its content
   textarea.style.height = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
 });
