@@ -1,4 +1,4 @@
-// Importing variables and functions from external module "imageUpload.js"
+/*// Importing variables and functions from external module "imageUpload.js"
 import { base64Image, fileType } from "./imageUpload.js";
 
 // Finding the element with the id "save" and adding a click event listener
@@ -100,3 +100,4 @@ var callAPI = (
         .then((result) => alert(JSON.parse(result).body))
         .catch((error) => console.log("error", error));
 }
+*/
