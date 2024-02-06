@@ -4,7 +4,7 @@ pipeline{
         stage("Build") {
             steps {
                 echo 'Building docker image...'
-                sh 'docker build -t metapix'
+                sh 'docker build -t metapix .'
                 echo 'Docker image built successfully'
             }
         }
